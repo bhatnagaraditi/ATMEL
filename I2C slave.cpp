@@ -27,7 +27,7 @@ uint8_t I2C_Slavelisten()
 	char status;
 	while ((TWCR & (1<<TWINT))==0)
 	{
-		//LCD("fasa hun");
+		
 		
 	}
 	status = TWSR & 0xF8;
@@ -56,7 +56,7 @@ uint8_t I2C_SlaveTransmit(char data)
 	{
 		TWCR |= (1<<TWINT);
 		return -1;
-		//LCD("Stop or REPS Tra");
+		
 	
 	}
 	if(status == 0xB8)
@@ -116,7 +116,7 @@ int main(void)
     /* Replace with your application code */
     while (1) 
     {
-		//LCD("doggy");
+		
 		//LCDd(I2C_Slavelisten());
 		_delay_ms(100);
 		LCDcomm(0x01);
@@ -187,7 +187,7 @@ int main(void)
 		 }
 		 LCDcomm(0x01);
 		 LCDcomm(0x02);
-		 //LCD("pran");
+		
 		 I2C_Slaveassign(0xB0);
 	   }
 	
